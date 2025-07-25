@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/webhook.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/webhook.js"
+    }
+  ],
+  "env": {
+    "BOT_SECRET": "@bot-secret",
+    "SERVER_API_CONSUMER_KEY": "@server-api-consumer-key",
+    "SERVER_TOKEN": "@server-token",
+    "PRIVATE_KEY": "@private-key",
+    "BOT_ID": "@bot-id"
+  }
+}
